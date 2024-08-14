@@ -1,10 +1,13 @@
 import React from 'react'
 
-const Stats = () => {
+const Stats = ({text}) => {
+
+  const numberOfCharacters = text.length;
+
   return (
     <div className='stats' >
       <Stat number={0} label="Words" />
-      <Stat number={0} label="Characters"/>
+      <Stat number={numberOfCharacters} label="Characters"/>
       <Stat number={280} label="Instagram"/>
       <Stat number={2200} label="Facebook"/>
       
