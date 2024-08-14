@@ -6,12 +6,20 @@ const Textarea = () => {
   const [warning,setWarning] = useState(false);
 
   const handleChange = (e) => {
+
+    // basic validation
+
     let newText = e.target.value;
     if (newText.includes("<script>")) {
-      alert("No script tag allowed");
+      
       newText = newText.replace("<script>", "");
       setWarning(true);
-    }else{
+    }else if (newText.includes("@")) {
+      
+      newText = newText.replace("@", "");
+      setWarning(true);
+    }
+    else{
       setWarning(false);
     }
     setText(newText);
